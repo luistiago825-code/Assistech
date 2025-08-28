@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - TechSolutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #222222;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #000000;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            color: #ff6600;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: #ff6600;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff6600;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #222222;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #ff6600;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .product-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #222222;
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff6600;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff6600;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: #111111;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        footer p {
+            color: #aaaaaa;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">TechSolutions</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="catalogo.html" style="color: #ff6600;">Catálogo</a></li>
+                    <li><a href="agendamento.html">Agendamento</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>Nossos Produtos</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">Imagem do Produto</div>
+                <div class="product-info">
+                    <h3>Software Empresarial</h3>
+                    <p>Solução completa para gestão de negócios.</p>
+                    <div class="product-price">R$ 299,90/mês</div>
+                    <a href="#" class="btn">Detalhes</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">Imagem do Produto</div>
+                <div class="product-info">
+                    <h3>Site Institucional</h3>
+                    <p>Desenvolvimento de sites profissionais.</p>
+                    <div class="product-price">R$ 1.499,00</div>
+                    <a href="#" class="btn">Detalhes</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">Imagem do Produto</div>
+                <div class="product-info">
+                    <h3>App Mobile</h3>
+                    <p>Aplicativos para iOS e Android.</p>
+                    <div class="product-price">R$ 4.999,00</div>
+                    <a href="#" class="btn">Detalhes</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">Imagem do Produto</div>
+                <div class="product-info">
+                    <h3>Consultoria TI</h3>
+                    <p>Orientacao especializada para sua empresa.</p>
+                    <div class="product-price">R$ 150,00/hora</div>
+                    <a href="#" class="btn">Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 TechSolutions. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

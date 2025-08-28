@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - TechSolutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #222222;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #000000;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            color: #ff6600;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: #ff6600;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff6600;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #222222;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #ff6600;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            background-color: #ddd;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #222222;
+        }
+        
+        .about-text p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card i {
+            font-size: 2.5rem;
+            color: #ff6600;
+            margin-bottom: 1rem;
+        }
+        
+        .value-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #222222;
+        }
+        
+        .value-card p {
+            color: #666;
+        }
+        
+        footer {
+            background-color: #111111;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        footer p {
+            color: #aaaaaa;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">TechSolutions</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="agendamento.html">Agendamento</a></li>
+                    <li><a href="sobre.html" style="color: #ff6600;">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>Sobre Nós</h2>
+        <div class="about-content">
+            <div class="about-image">Imagem da Empresa</div>
+            <div class="about-text">
+                <h3>Nossa História</h3>
+                <p>Fundada em 2010, a TechSolutions nasceu da paixão por tecnologia e da vontade de ajudar empresas a transformarem seus negócios através de soluções digitais inovadoras.</p>
+                <p>Começamos como uma pequena startup e hoje somos referência no mercado de desenvolvimento de software e consultoria em TI, com mais de 200 projetos entregues e dezenas de clientes satisfeitos.</p>
+                <p>Nossa missão é simplificar a tecnologia para que nossos clientes possam focar no que realmente importa: crescer seus negócios.</p>
+            </div>
+        </div>
+        
+        <div class="values">
+            <div class="value-card">
+                <i>🎯</i>
+                <h3>Missão</h3>
+                <p>Fornecer soluções tecnológicas inovadoras que impulsionem o crescimento dos negócios de nossos clientes.</p>
+            </div>
+            
+            <div class="value-card">
+                <i>👁️</i>
+                <h3>Visão</h3>
+                <p>Ser referência nacional em desenvolvimento de software e consultoria em TI até 2025.</p>
+            </div>
+            
+            <div class="value-card">
+                <i>💎</i>
+                <h3>Valores</h3>
+                <p>Inovação, qualidade, transparência e comprometimento com o sucesso do cliente.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 TechSolutions. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

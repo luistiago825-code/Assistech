@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento - TechSolutions</title>
+    <title>Agendamento - ASSIST TECH</title>
+
     <style>
         * {
             margin: 0;
@@ -186,10 +187,52 @@
         }
     </style>
 </head>
+<script>
+// Carregar postagens do blog da API
+async function loadBlogPosts() {
+    try {
+        const response = await fetch('https://api.seusite.com/posts');
+        if (response.ok) {
+            const posts = await response.json();
+            displayPosts(posts);
+        } else {
+            console.error('Falha ao carregar postagens');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+    }
+}
+
+// Exibir postagens no site
+function displayPosts(posts) {
+    const postsContainer = document.getElementById('blog-posts');
+    if (!postsContainer) return;
+    
+    postsContainer.innerHTML = posts.map(post => `
+        <div class="blog-card">
+            <div class="blog-image">
+                <img src="${post.image || 'placeholder.jpg'}" alt="${post.title}">
+            </div>
+            <div class="blog-info">
+                <h3>${post.title}</h3>
+                <div class="blog-meta">
+                    <span>${new Date(post.date).toLocaleDateString('pt-BR')}</span>
+                    <span>${post.readTime} min leitura</span>
+                </div>
+                <p>${post.excerpt}</p>
+                <a href="post.html?id=${post.id}" class="btn">Ler Mais</a>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Carregar posts quando a página for carregada
+document.addEventListener('DOMContentLoaded', loadBlogPosts);
+</script>
 <body>
     <header>
         <div class="nav-container">
-            <div class="logo">TechSolutions</div>
+            <div class="logo">ASSIST TECH</div>
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -203,62 +246,7 @@
     </header>
 
     <section class="section">
-        <h2>Agende um Serviço</h2>
-        <div class="form-container">
-            <form>
-                <div class="form-group">
-                    <label for="name">Nome Completo</label>
-                    <input type="text" id="name" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Telefone</label>
-                    <input type="tel" id="phone" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="service">Tipo de Serviço</label>
-                    <select id="service" class="form-select" required>
-                        <option value="">Selecione um serviço</option>
-                        <option value="consultoria">Consultoria</option>
-                        <option value="desenvolvimento">Desenvolvimento</option>
-                        <option value="design">Design</option>
-                        <option value="suporte">Suporte Técnico</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="date">Data Preferencial</label>
-                    <input type="date" id="date" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="time">Horário Preferencial</label>
-                    <select id="time" class="form-select" required>
-                        <option value="">Selecione um horário</option>
-                        <option value="manha">Manhã (8h-12h)</option>
-                        <option value="tarde">Tarde (13h-17h)</option>
-                        <option value="noite">Noite (18h-21h)</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Mensagem (Opcional)</label>
-                    <textarea id="message" class="form-textarea"></textarea>
-                </div>
-                
-                <button type="submit" class="btn">Solicitar Agendamento</button>
-            </form>
-        </div>
-    </section>
+        <h2>Em Breve</h2>
 
-    <footer>
-        <p>&copy; 2023 TechSolutions. Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
